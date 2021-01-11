@@ -21,7 +21,7 @@ public class FinalController {
     public final FeatureSwitchConfiguration featureSwitchConfiguration;
     @PostMapping("/start")
     public ResponseEntity isBarMitzva(@RequestBody Person person){
-        if ((person.name == "") || (person.name == null)){
+        if (person.name.equals("")){
             return new ResponseEntity<> ("no name", HttpStatus.UNAUTHORIZED);
         }
         else{
